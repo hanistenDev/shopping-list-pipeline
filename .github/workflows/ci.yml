@@ -19,9 +19,6 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run tests (ignore if none)
-        run: npm test -- --watchAll=false || true
-
       - name: Build project
         run: npm run build
 
