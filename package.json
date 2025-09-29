@@ -15,7 +15,16 @@
     "uuid": "^11.0.2"
   },
   "devDependencies": {
-    "eslint": "^8",
-    "eslint-config-next": "15.0.2"
+    "eslint": "^8.57.1",
+    "eslint-config-next": "15.0.2",
+    "jest": "^30.2.0"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "jest --watchAll=false"
   }
+
 }
