@@ -1,3 +1,5 @@
+Reflexion Hanisten Thivakaran Modul 324 
+
 Ich habe eine vorhandene Shopping-List-App in mein eigenes Repository kopiert und dort eine CI/CD-Pipeline mit GitHub Actions eingerichtet. Mein Ziel war es, Linting, Tests und ein einfaches Deployment in separate Jobs zu unterteilen.
 
 Ich habe das Workflow-File eingerichtet und es in die Schritte lint → test → deploy gegliedert. Dabei kam Node 20 mit npm-Cache zum Einsatz.
