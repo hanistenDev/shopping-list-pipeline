@@ -24,10 +24,30 @@ jobs:
       - name: Run Linting
         run: npm run lint
 
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    needs: lint
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Build
+        run: npm run build
+
   test:
     name: Testing
     runs-on: ubuntu-latest
-    needs: lint
+    needs: build
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
@@ -47,7 +67,7 @@ jobs:
   deploy:
     name: Deployment
     runs-on: ubuntu-latest
-    needs: [lint, test]
+    needs: [build, test]
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
